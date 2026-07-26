@@ -5,7 +5,8 @@ __pycache__/
 .agents
 .codex
 
-# Large local datasets/results (exceed GitHub's regular file limits)
-data/TCPD_AE_All_States_2026-7-15/All_States_AE.csv
-data/TCPD_GA_All_States_2026-7-15/All_States_GA.csv
+# Legacy extracted TCPD exports; the tracked inputs are compressed .csv.gz files.
+data/TCPD_*_All_States_*/
+
+# Large generated result (exceeds GitHub's recommended regular-file limit)
 experiments/results/vidhansabha_analysis.csv

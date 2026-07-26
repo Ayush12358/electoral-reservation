@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-07-16T15:57:14.063681Z",
+  "generated_at_utc": "2026-07-26T00:00:00Z",
   "files": [
     {
       "path": "data/raw/centre_no-of-members.csv",
@@ -37,19 +37,19 @@
       "sha256": "122274d53448229a5e50357d791a564dadeada16127faa522b10a0a8fa485106"
     },
     {
-      "path": "data/TCPD_AE_All_States_2026-7-15/All_States_AE.csv",
-      "bytes": 112753512,
-      "sha256": "35d2e0c2caaf2e0f3ac745222e75ff517da679dcd2aea80820d1d0ba8a83f04f"
+      "path": "data/TCPD_AE_All_States_2026-7-26.csv.gz",
+      "bytes": 17217424,
+      "sha256": "6159e090d7d0d0e15531ff76b8429457121d7611b7752864d5123a8d75e01fc7"
     },
     {
-      "path": "data/TCPD_GA_All_States_2026-7-15/All_States_GA.csv",
-      "bytes": 64111919,
-      "sha256": "fa5172feaa51931a9740358c774a967a319f6130f7b0e7cd32816ec4cf1782f5"
+      "path": "data/TCPD_GA_All_States_2026-7-26.csv.gz",
+      "bytes": 6517972,
+      "sha256": "ce601afc0f03f693f1cf5e90fe1b4ead03746ab8e53c827c5f257c58b8d6ba6a"
     },
     {
-      "path": "data/TCPD_GE_All_States_2026-7-15/All_States_GE.csv",
-      "bytes": 20469716,
-      "sha256": "a3dbeb280776ac6a59cb0228588119c0721d3e429c924e067da3865006228999"
+      "path": "data/TCPD_GE_All_States_2026-7-26.csv.gz",
+      "bytes": 3279603,
+      "sha256": "0cd0c701d9a229b6c638e90db49be40463dc532957433e770942942087e2039d"
     }
   ]
 }

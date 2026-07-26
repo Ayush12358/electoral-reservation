@@ -18,12 +18,13 @@ import statsmodels.api as sm
 DATA_DIR = Path("data")
 OUTPUT_DIR = Path("experiments/results")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+TCPD_GE_PATH = DATA_DIR / "TCPD_GE_All_States_2026-7-26.csv.gz"
+TCPD_AE_PATH = DATA_DIR / "TCPD_AE_All_States_2026-7-26.csv.gz"
 
 
 def load_tcpd_ge(years=(2004, 2009, 2014, 2019)) -> pd.DataFrame:
     """Load and clean TCPD Lok Sabha dataset."""
-    path = DATA_DIR / "TCPD_GE_All_States_2026-7-15" / "All_States_GE.csv"
-    df = pd.read_csv(path, low_memory=False)
+    df = pd.read_csv(TCPD_GE_PATH, low_memory=False)
 
     # Standardize sex
     df["Sex"] = df["Sex"].str.upper().str.strip()
@@ -101,8 +102,7 @@ def load_tcpd_ge(years=(2004, 2009, 2014, 2019)) -> pd.DataFrame:
 
 def load_tcpd_ae(years=None) -> pd.DataFrame:
     """Load and clean TCPD Vidhan Sabha dataset."""
-    path = DATA_DIR / "TCPD_AE_All_States_2026-7-15" / "All_States_AE.csv"
-    df = pd.read_csv(path, low_memory=False)
+    df = pd.read_csv(TCPD_AE_PATH, low_memory=False)
 
     # Standardize sex
     df["Sex"] = df["Sex"].str.upper().str.strip()
