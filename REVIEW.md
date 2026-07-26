@@ -1,126 +1,76 @@
-## Updated review
+## Open review items
 
-### Verdict
+### Current verdict
 
-**Ready to publish as version 0.1 working paper or preprint.**
-**Not yet ready for submission to a strong peer-reviewed journal.**
+**Version 0.1.0 is publicly archived, but it should not be treated as the final
+manuscript version. Prepare a corrected version before arXiv or journal
+submission.**
 
-The repository now contains the compressed TCPD inputs, corrected core
-specification, refreshed results, manuscript consistency audit, deterministic
-release archive, and prepared arXiv and Zenodo submission packages.
+## Required for the next version
 
-## Resolved issues
+### Reconcile results and manuscript
 
-### Data availability and provenance
+The documented full reproduction command currently regenerates numerous result
+artifacts and then fails the manuscript consistency audit. The current code
+produces a subsequent-election vote-share coefficient of approximately
+`-0.060312`, while the audit expects `-0.061153`.
 
-* The GE, AE, and GA TCPD inputs are tracked as compressed archives.
-* Extended-analysis paths read the `.csv.gz` files directly.
-* Provenance, byte sizes, and SHA-256 checksums are recorded.
-* `scripts/validate_checksums.py` validates all recorded inputs.
+`PAPER.md` also mixes results from two analytical vintages. For example, it
+reports both:
 
-### Vote-share denominator
+* `N = 7,639` and a full-control female coefficient of approximately `-0.60`;
+* `N = 7,812` and a coefficient of approximately `-0.54`.
 
-Constituency totals are calculated from every valid candidate vote record before
-the analysis is restricted to candidates with usable gender information.
+Before the next release:
 
-### 2004 baseline leakage
+* choose the current code and tracked inputs as the authoritative specification;
+* rerun the complete core and extended workflow;
+* update every affected number in `PAPER.md`;
+* regenerate the manuscript audit, LaTeX source, PDF, release archive, and
+  checksums;
+* verify that `bash scripts/reproduce.sh` finishes successfully from a clean
+  checkout.
 
-The contemporaneous 2004 party-state expectation is now leave-one-out. Candidates
-in singleton party-state groups are excluded because no within-group
-leave-one-out expectation exists.
+### Correct the Zenodo description
 
-### Education missingness
+DOI `10.5281/zenodo.21591947` currently identifies the GitHub `v0.1.0`
+**software** archive, not a separately deposited working-paper record. Repository
+documentation should describe it as a software/reproducibility DOI rather than
+the paper DOI.
 
-Missing education is no longer coded as illiteracy. The primary controlled
-specification uses median imputation and an `EDU_MISSING` indicator.
+The Zenodo record also needs its stale reference to an accompanying arXiv paper
+removed. If a paper DOI is wanted, publish the prepared PDF and source as a
+separate Zenodo `Publication / Working paper` record.
 
-### Manuscript framing and factual accuracy
+### Confirm third-party data rights
 
-* The paper describes a candidacy representation gap and evidence consistent
-  with party gatekeeping rather than claiming to identify nomination
-  discrimination among unobserved aspirants.
-* The historical table reports 59 women winners (10.9%) in 2009 and 62 (11.4%)
-  in 2014.
-* Unsourced party-specific winner ranges were removed.
-* Repository links in `CITATION.cff` point to
-  `https://github.com/Ayush12358/electoral-reservation`.
+Confirm that redistribution of the tracked TCPD and other election-data files is
+consistent with the providers' current terms. The GitHub-generated Zenodo
+software archive includes the tracked repository data, while its record uses an
+MIT license. Clarify that MIT covers original code only and does not relicense
+third-party data; contact Zenodo support if the archived record requires a file
+or licensing correction.
 
-### Publication packages
+### Remove obsolete release artifacts
 
-* The repository has an MIT code license.
-* `arxiv/` and `release/electoral_reservation_arxiv_v0.1.zip` provide a
-  self-contained PDFLaTeX submission package.
-* `zenodo/` and `release/zenodo_submission_v0.1.0.zip` provide a working-paper
-  PDF, source, raw-data-free replication archive, metadata, and checksums.
-* The manuscript consistency audit verifies eight registered quantitative
-  claims.
-* The frozen replication archive has been rebuilt and verified.
+For the next version, remove the unused tracked July 15 uncompressed TCPD GE
+export and the superseded July 16 frozen archive. Keep only the inputs and
+release artifacts used by the documented workflow.
 
-## Verification policy
+## Optional arXiv publication
 
-GitHub Actions is intentionally not used. The workflow was removed because the
-current release has already been validated and the repository owner does not
-want recurring CI runs.
+If endorsement is obtained:
 
-Verification remains reproducible through committed local commands:
+* submit the corrected manuscript version to arXiv;
+* add the assigned arXiv identifier to the paper, README, citation metadata, and
+  Zenodo records.
 
-```text
-python scripts/validate_checksums.py
-python experiments/analysis_with_controls.py
-python experiments/manuscript_consistency_audit.py
-python scripts/build_release.py
-python experiments/verify_release.py
-python scripts/build_arxiv_package.py
-python scripts/build_zenodo_package.py
-```
-
-The arXiv ZIP was compiled twice with PDFLaTeX from a clean temporary extraction.
-The Zenodo payload checksums and bundle membership were also independently
-validated locally. This is credible release evidence, but it is not continuous
-clean-clone verification.
-
-## Remaining work
-
-### Before public release
-
-* Confirm that redistribution of the tracked TCPD archives is consistent with
-  the provider's current terms.
-* The Zenodo record is published at
-  `https://doi.org/10.5281/zenodo.21591947`; use
-  `https://doi.org/10.5281/zenodo.21591946` for the evolving project.
-* If arXiv endorsement is obtained, publish the arXiv version and add its
-  identifier to the repository and Zenodo record.
-
-### Before journal submission
+## Before journal submission
 
 * Add dependence-robust uncertainty appropriate to repeated party,
   constituency, election, and state structure.
-* Re-run the full robustness and extended-analysis suite from the corrected
-  specification, not only the refreshed core outputs.
 * Complete human adjudication of unresolved fuzzy entity links.
 * Strengthen convergent validation using outcomes such as appointments,
   leadership roles, or expert assessments.
-* Check the target journal's preprint and repository-license policies.
-
-## Revised scorecard
-
-| Area | Assessment |
-|---|---|
-| Conceptual contribution | Strong |
-| Transparency about limitations | Strong |
-| Repository organization | Strong |
-| Data availability | Strong, subject to redistribution confirmation |
-| Reproducibility design | Good; locally verified, no recurring CI |
-| Measurement validity | Preliminary |
-| Causal identification | Not claimed and not established |
-| Statistical specification | Core issues corrected; journal extensions remain |
-| Manuscript factual accuracy | Mandatory corrections completed |
-| Working-paper readiness | **Yes** |
-| Journal readiness | **No, further validation and uncertainty work required** |
-
-## Recommended publication decision
-
-**Publish as version 0.1 working paper** after confirming TCPD redistribution
-terms and completing the chosen repository deposit. Treat arXiv endorsement as
-optional: Zenodo can provide the immediate public record and DOI without
-endorsement.
+* Check the target journal's preprint, software-archive, data-redistribution, and
+  licensing policies.
