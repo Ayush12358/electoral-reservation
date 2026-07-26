@@ -1,0 +1,364 @@
+year,st_name,no_of_state_seats
+1961,Odisha,140
+1962,Andhra Pradesh,300
+1962,Assam,105
+1962,Bihar,318
+1962,Gujarat,154
+1962,Jammu & Kashmir,75
+1962,Madhya Pradesh,288
+1962,Madras,206
+1962,Maharashtra,264
+1962,Mysore,208
+1962,Punjab,154
+1962,Rajasthan,176
+1962,Uttar Pradesh,430
+1962,West Bengal,252
+1964,Nagaland,40
+1964,Puducherry,30
+1965,Kerala,133
+1967,Andhra Pradesh,287
+1967,Assam,125
+1967,Bihar,318
+1967,Goa Daman & Diu,30
+1967,Gujarat,168
+1967,Haryana,81
+1967,Himachal Pradesh,60
+1967,Jammu & Kashmir,75
+1967,Kerala,133
+1967,Madhya Pradesh,296
+1967,Madras,234
+1967,Maharashtra,270
+1967,Manipur,30
+1967,Mysore,216
+1967,Odisha,140
+1967,Punjab,104
+1967,Rajasthan,184
+1967,Tripura,30
+1967,Uttar Pradesh,425
+1967,West Bengal,280
+1968,Haryana,81
+1969,Bihar,318
+1969,Nagaland,40
+1969,Puducherry,30
+1969,Punjab,104
+1969,Uttar Pradesh,425
+1969,West Bengal,280
+1970,Kerala,133
+1971,Odisha,140
+1971,Tamil Nadu,234
+1971,West Bengal,279
+1972,Andhra Pradesh,287
+1972,Assam,114
+1972,Bihar,318
+1972,Delhi,56
+1972,Goa Daman & Diu,30
+1972,Gujarat,168
+1972,Haryana,81
+1972,Himachal Pradesh,68
+1972,Jammu & Kashmir,75
+1972,Madhya Pradesh,296
+1972,Maharashtra,270
+1972,Manipur,60
+1972,Meghalaya,60
+1972,Mizoram,30
+1972,Mysore,216
+1972,Punjab,104
+1972,Rajasthan,184
+1972,Tripura,60
+1972,West Bengal,280
+1974,Manipur,60
+1974,Nagaland,60
+1974,Odisha,146
+1974,Puducherry,30
+1974,Uttar Pradesh,424
+1975,Gujarat,181
+1977,Bihar,324
+1977,Delhi,56
+1977,Goa Daman & Diu,30
+1977,Haryana,90
+1977,Himachal Pradesh,68
+1977,Jammu & Kashmir,76
+1977,Kerala,140
+1977,Madhya Pradesh,320
+1977,Nagaland,60
+1977,Odisha,147
+1977,Puducherry,30
+1977,Punjab,117
+1977,Rajasthan,200
+1977,Tamil Nadu,234
+1977,Tripura,60
+1977,Uttar Pradesh,425
+1977,West Bengal,294
+1978,Andhra Pradesh,294
+1978,Arunachal Pradesh,30
+1978,Assam,126
+1978,Karnataka,224
+1978,Maharashtra,288
+1978,Meghalaya,60
+1978,Mizoram,30
+1979,Mizoram,30
+1979,Sikkim,32
+1980,Arunachal Pradesh,30
+1980,Bihar,324
+1980,Goa Daman & Diu,30
+1980,Gujarat,182
+1980,Kerala,140
+1980,Madhya Pradesh,320
+1980,Maharashtra,288
+1980,Manipur,60
+1980,Odisha,147
+1980,Puducherry,30
+1980,Punjab,117
+1980,Rajasthan,200
+1980,Tamil Nadu,234
+1980,Uttar Pradesh,425
+1982,Haryana,90
+1982,Himachal Pradesh,68
+1982,Kerala,140
+1982,Nagaland,60
+1982,West Bengal,294
+1983,Andhra Pradesh,294
+1983,Assam,109
+1983,Delhi,55
+1983,Jammu & Kashmir,76
+1983,Karnataka,224
+1983,Meghalaya,60
+1983,Tripura,60
+1984,Arunachal Pradesh,30
+1984,Goa Daman & Diu,30
+1984,Manipur,60
+1984,Mizoram,30
+1984,Tamil Nadu,234
+1985,Andhra Pradesh,294
+1985,Assam,126
+1985,Bihar,324
+1985,Gujarat,182
+1985,Himachal Pradesh,68
+1985,Karnataka,224
+1985,Madhya Pradesh,320
+1985,Maharashtra,288
+1985,Odisha,147
+1985,Puducherry,30
+1985,Punjab,117
+1985,Rajasthan,200
+1985,Sikkim,32
+1985,Uttar Pradesh,425
+1987,Haryana,90
+1987,Jammu & Kashmir,76
+1987,Kerala,140
+1987,Mizoram,40
+1987,Nagaland,60
+1987,West Bengal,294
+1988,Meghalaya,60
+1988,Tripura,60
+1989,Andhra Pradesh,294
+1989,Goa,40
+1989,Karnataka,224
+1989,Mizoram,40
+1989,Nagaland,60
+1989,Sikkim,32
+1989,Tamil Nadu,234
+1989,Uttar Pradesh,425
+1990,Arunachal Pradesh,60
+1990,Bihar,324
+1990,Gujarat,182
+1990,Himachal Pradesh,67
+1990,Madhya Pradesh,320
+1990,Maharashtra,288
+1990,Manipur,54
+1990,Odisha,147
+1990,Puducherry,30
+1990,Rajasthan,200
+1991,Assam,126
+1991,Haryana,90
+1991,Kerala,140
+1991,Puducherry,30
+1991,Tamil Nadu,234
+1991,Uttar Pradesh,419
+1991,West Bengal,294
+1992,Punjab,117
+1993,Delhi,70
+1993,Himachal Pradesh,68
+1993,Madhya Pradesh,320
+1993,Meghalaya,60
+1993,Mizoram,40
+1993,Nagaland,60
+1993,Rajasthan,199
+1993,Tripura,60
+1993,Uttar Pradesh,423
+1994,Andhra Pradesh,294
+1994,Goa,40
+1994,Karnataka,224
+1994,Sikkim,32
+1995,Arunachal Pradesh,60
+1995,Bihar,324
+1995,Gujarat,182
+1995,Maharashtra,288
+1995,Manipur,60
+1995,Odisha,147
+1996,Assam,122
+1996,Haryana,90
+1996,Jammu & Kashmir,87
+1996,Kerala,140
+1996,Puducherry,30
+1996,Tamil Nadu,234
+1996,Uttar Pradesh,424
+1996,West Bengal,294
+1997,Punjab,117
+1998,Delhi,70
+1998,Gujarat,182
+1998,Himachal Pradesh,68
+1998,Madhya Pradesh,320
+1998,Meghalaya,60
+1998,Mizoram,40
+1998,Nagaland,60
+1998,Rajasthan,200
+1998,Tripura,60
+1999,Andhra Pradesh,294
+1999,Arunachal Pradesh,59
+1999,Goa,40
+1999,Karnataka,224
+1999,Maharashtra,288
+1999,Sikkim,32
+2000,Bihar,324
+2000,Haryana,90
+2000,Manipur,60
+2000,Odisha,147
+2001,Assam,126
+2001,Kerala,140
+2001,Puducherry,30
+2001,Tamil Nadu,234
+2001,West Bengal,294
+2002,Goa,40
+2002,Gujarat,182
+2002,Jammu & Kashmir,87
+2002,Manipur,60
+2002,Punjab,117
+2002,Uttar Pradesh,403
+2002,Uttarakhand,70
+2003,Chhattisgarh,90
+2003,Delhi,70
+2003,Himachal Pradesh,68
+2003,Madhya Pradesh,230
+2003,Meghalaya,60
+2003,Mizoram,40
+2003,Nagaland,60
+2003,Rajasthan,200
+2003,Tripura,60
+2004,Andhra Pradesh,294
+2004,Arunachal Pradesh,57
+2004,Karnataka,224
+2004,Maharashtra,288
+2004,Odisha,147
+2004,Sikkim,28
+2005,Bihar,243
+2005,Haryana,90
+2005,Jharkhand,81
+2006,Assam,126
+2006,Kerala,140
+2006,Puducherry,30
+2006,Tamil Nadu,234
+2006,West Bengal,294
+2007,Goa,40
+2007,Gujarat,182
+2007,Himachal Pradesh,68
+2007,Manipur,60
+2007,Punjab,116
+2007,Uttar Pradesh,403
+2007,Uttarakhand,69
+2008,Chhattisgarh,90
+2008,Delhi,70
+2008,Jammu & Kashmir,87
+2008,Karnataka,224
+2008,Madhya Pradesh,230
+2008,Meghalaya,60
+2008,Mizoram,40
+2008,Nagaland,60
+2008,Rajasthan,200
+2008,Tripura,60
+2009,Andhra Pradesh,294
+2009,Arunachal Pradesh,60
+2009,Haryana,90
+2009,Jharkhand,81
+2009,Maharashtra,288
+2009,Odisha,147
+2009,Sikkim,32
+2010,Bihar,243
+2011,Assam,126
+2011,Kerala,140
+2011,Puducherry,30
+2011,Tamil Nadu,234
+2011,West Bengal,294
+2012,Goa,40
+2012,Gujarat,182
+2012,Himachal Pradesh,68
+2012,Manipur,60
+2012,Punjab,117
+2012,Uttar Pradesh,403
+2012,Uttarakhand,70
+2013,Chhattisgarh,90
+2013,Delhi,70
+2013,Karnataka,224
+2013,Madhya Pradesh,230
+2013,Meghalaya,60
+2013,Mizoram,40
+2013,Nagaland,60
+2013,Rajasthan,200
+2013,Tripura,60
+2014,Andhra Pradesh,175
+2014,Arunachal Pradesh,60
+2014,Haryana,90
+2014,Jammu & Kashmir,87
+2014,Jharkhand,81
+2014,Maharashtra,288
+2014,Odisha,147
+2014,Sikkim,32
+2014,Telangana,119
+2015,Bihar,243
+2015,Delhi,70
+2016,Assam,126
+2016,Kerala,140
+2016,Puducherry,30
+2016,Tamil Nadu,232
+2016,West Bengal,294
+2017,Goa,40
+2017,Gujarat,182
+2017,Himachal Pradesh,68
+2017,Manipur,60
+2017,Punjab,117
+2017,Uttar Pradesh,403
+2017,Uttarakhand,70
+2018,Chhattisgarh,90
+2018,Karnataka,224
+2018,Madhya Pradesh,230
+2018,Meghalaya,60
+2018,Mizoram,40
+2018,Nagaland,60
+2018,Rajasthan,199
+2018,Telangana,119
+2018,Tripura,60
+2019,Andhra Pradesh,175
+2019,Arunachal Pradesh,60
+2019,Haryana,90
+2019,Jharkhand,81
+2019,Maharashtra,288
+2019,Odisha,146
+2019,Sikkim,32
+2020,Bihar,243
+2020,Delhi,70
+2021,Assam,126
+2021,Kerala,140
+2021,Puducherry,30
+2021,Tamil Nadu,234
+2021,West Bengal,294
+2022,Goa,40
+2022,Gujarat,182
+2022,Himachal Pradesh,68
+2022,Manipur,60
+2022,Punjab,117
+2022,Uttar Pradesh,403
+2022,Uttarakhand,70
+2023,Karnataka,224
+2023,Meghalaya,59
+2023,Nagaland,60
+2023,Tripura,60

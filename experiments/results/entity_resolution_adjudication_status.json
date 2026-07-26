@@ -1,0 +1,9 @@
+{
+  "template": "experiments\\results\\entity_resolution_adjudication_template.csv",
+  "n_links": 444,
+  "n_accept": 0,
+  "n_reject": 0,
+  "n_pending": 444,
+  "complete": false,
+  "require_complete": false
+}

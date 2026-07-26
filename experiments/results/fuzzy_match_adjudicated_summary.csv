@@ -1,0 +1,2 @@
+scenario,n,n_fuzzy,female_coef,female_se_hc3,female_p_value,female_ci_lower,female_ci_upper,coef_change_from_exact
+exact_match_main,7812,0,-0.5442096065905037,0.3801004173084942,0.1522147530895269,-1.2891927350237973,0.20077352184278996,0.0

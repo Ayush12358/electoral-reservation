@@ -1,0 +1,10 @@
+{
+  "seed": 42,
+  "n_boot": 500,
+  "stratification": "by YEAR within the matched analysis sample",
+  "scope": "sampling uncertainty only; does not re-estimate the raw-election expected-vote-share stage",
+  "notes": [
+    "This is a conservative first bootstrap pass for uncertainty propagation.",
+    "A deeper bootstrap can resample the raw election table and re-run the full pipeline later."
+  ]
+}

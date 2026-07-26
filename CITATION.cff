@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+title: "Electoral Capability, Party Gatekeeping, and the Exit Threshold for Institutional Correction"
+message: "If you use this computational measurement framework or replication package, please cite this release."
+type: software
+authors:
+  - family-names: Maurya
+    given-names: Ayush
+version: "0.1.0"
+date-released: 2026-07-17
+repository-code: "https://github.com/Ayush12358/ai_papers"
+url: "https://github.com/Ayush12358/ai_papers/tree/main/papers/electoral-reservation"
+keywords:
+  - candidate capability
+  - party gatekeeping
+  - women's representation
+  - electoral measurement
+  - India
+abstract: >-
+  Reproducible code and artifacts for a computational measurement framework
+  decomposing representation deficits into nomination, seat quality, and vote
+  conversion stages. The party-normalized residual is treated as an observable
+  proxy for measured electoral contribution, not as a uniquely identified latent
+  capability construct.

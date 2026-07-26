@@ -1,0 +1,6 @@
+data/
+outputs/
+experiments/results/
+**/__pycache__/
+*.pyc
+.git/

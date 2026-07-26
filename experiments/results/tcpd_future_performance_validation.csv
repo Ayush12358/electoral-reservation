@@ -1,0 +1,3 @@
+outcome,sample,n,capability_coefficient,capability_robust_se,capability_p_value,baseline_in_sample_r2,capability_in_sample_r2,baseline_grouped_cv_rmse,capability_grouped_cv_rmse,baseline_grouped_cv_r2,capability_grouped_cv_r2,capability_odds_ratio,baseline_grouped_cv_auc,capability_grouped_cv_auc
+next_election_vote_share,recontesting candidates only,2616,-0.061153018722927915,0.031959201218112875,0.055687726552080555,0.7143415310906278,0.7151353387671988,11.383433234704993,11.37246180814957,0.7128617879160042,0.7134190342974918,,,
+next_election_win,recontesting candidates only,2616,0.0013757545257929542,0.0053362536400462955,0.7965513805621753,,,,,,,1.0013767013101817,0.846094215788255,0.8462205031189374

@@ -1,0 +1,2 @@
+n_candidates,min_match_score,median_match_score,mean_match_score,pct_party_exact,pct_score_ge_0_97,pct_priority_P1,pct_priority_P2,pct_priority_P3,pct_priority_P4
+444,0.94,0.969,0.9669650900900904,0.9099099099099099,0.49774774774774777,0.16216216216216217,0.3355855855855856,0.22072072072072071,0.28153153153153154

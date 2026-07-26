@@ -1,0 +1,55 @@
+{
+  "generated_at_utc": "2026-07-16T15:57:14.063681Z",
+  "files": [
+    {
+      "path": "data/raw/centre_no-of-members.csv",
+      "bytes": 145,
+      "sha256": "277973bf2ac5f53f7774a4b705bc64d591c46c95865e526c80f8a83894e16b2c"
+    },
+    {
+      "path": "data/raw/centre-level-election.csv",
+      "bytes": 4855703,
+      "sha256": "62a2c14d3a41726d72d1a5f1f73cdca431c196e1e9fa31744ec735c8b26bddd1"
+    },
+    {
+      "path": "data/raw/myneta_2004.csv",
+      "bytes": 231374,
+      "sha256": "d8e1fa6b6d8e374b3c40a32543c023f51def5bcdec0cdf9c8ec06ed905c2891d"
+    },
+    {
+      "path": "data/raw/myneta_2009.csv",
+      "bytes": 545711,
+      "sha256": "4431a08fa409672dea4b71f18922a59e5dfd2effc6d481b2a39701664f546470"
+    },
+    {
+      "path": "data/raw/parliament_final.csv",
+      "bytes": 6784656,
+      "sha256": "d9e01c3e19a001fd97cf425845c4f89a702563122739bef1dea446260d6be7e3"
+    },
+    {
+      "path": "data/raw/state_no-of-members.csv",
+      "bytes": 6814,
+      "sha256": "2ae936d91464e32d4f1927778d25bd0d581a077729398d71ebbfa01d4da3fb7a"
+    },
+    {
+      "path": "data/raw/state-level-election.csv",
+      "bytes": 26228100,
+      "sha256": "122274d53448229a5e50357d791a564dadeada16127faa522b10a0a8fa485106"
+    },
+    {
+      "path": "data/TCPD_AE_All_States_2026-7-15/All_States_AE.csv",
+      "bytes": 112753512,
+      "sha256": "35d2e0c2caaf2e0f3ac745222e75ff517da679dcd2aea80820d1d0ba8a83f04f"
+    },
+    {
+      "path": "data/TCPD_GA_All_States_2026-7-15/All_States_GA.csv",
+      "bytes": 64111919,
+      "sha256": "fa5172feaa51931a9740358c774a967a319f6130f7b0e7cd32816ec4cf1782f5"
+    },
+    {
+      "path": "data/TCPD_GE_All_States_2026-7-15/All_States_GE.csv",
+      "bytes": 20469716,
+      "sha256": "a3dbeb280776ac6a59cb0228588119c0721d3e429c924e067da3865006228999"
+    }
+  ]
+}

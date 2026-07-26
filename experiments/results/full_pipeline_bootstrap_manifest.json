@@ -1,0 +1,23 @@
+{
+  "seed": 42,
+  "n_boot": 100,
+  "stratification": "by YEAR with constituency-block resampling before recomputing vote shares and expected shares",
+  "scope": "full pipeline over the raw election table; MyNeta controls held fixed as the external linkage source",
+  "notes": [
+    "This propagates uncertainty through the first-stage measurement step and the exact-match linkage.",
+    "Bootstrap resamples preserve constituency structure within each year, but still treat MyNeta as fixed external control data."
+  ],
+  "observed": {
+    "female_coef": -0.5442096065905037,
+    "female_se": 0.3801004173084942,
+    "female_p": 0.1522147530895269,
+    "winnable_gap": -0.10901204326531211,
+    "calibration_slope": 0.8846023290389167,
+    "calibration_intercept": 0.1544056047969838,
+    "calibration_r2": 0.8223813152138706,
+    "n_matched": 7812,
+    "match_rate_overall": 0.6441292875989446,
+    "match_rate_female": 0.6582597730138714,
+    "match_rate_male": 0.643140714600794
+  }
+}

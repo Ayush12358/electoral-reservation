@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="330" viewBox="0 0 1120 330" role="img" aria-labelledby="title desc">
+  <title id="title">Measurement model: from latent capability to electoral success</title>
+  <desc id="desc">A four-stage conceptual diagram showing latent capability, measured electoral contribution, electoral contribution, and electoral success, with unobserved influences entering the residual.</desc>
+  <style>
+    .box { stroke: #1f3b5b; stroke-width: 2; rx: 12; ry: 12; }
+    .latent { fill: #e9f2ff; } .measure { fill: #eaf8f0; } .outcome { fill: #fff4df; }
+    .heading { font: 700 19px sans-serif; fill: #13283d; text-anchor: middle; }
+    .body { font: 14px sans-serif; fill: #263746; text-anchor: middle; }
+    .note { font: italic 13px sans-serif; fill: #5b6570; text-anchor: middle; }
+    .arrow { stroke: #1f3b5b; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    .dashed { stroke: #8b5a2b; stroke-width: 2; stroke-dasharray: 6 5; fill: none; marker-end: url(#arrow); }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1f3b5b"/>
+    </marker>
+  </defs>
+  <rect class="box latent" x="30" y="90" width="220" height="130"/>
+  <text class="heading" x="140" y="125">Latent capability</text>
+  <text class="body" x="140" y="153">Unobserved suitability</text>
+  <text class="body" x="140" y="174">for democratic office</text>
+  <text class="note" x="140" y="202">Theoretical construct</text>
+
+  <rect class="box measure" x="310" y="90" width="220" height="130"/>
+  <text class="heading" x="420" y="125">Measured electoral</text>
+  <text class="heading" x="420" y="148">contribution</text>
+  <text class="body" x="420" y="174">Party-normalized residual</text>
+  <text class="note" x="420" y="202">Observable proxy</text>
+
+  <rect class="box measure" x="590" y="90" width="220" height="130"/>
+  <text class="heading" x="700" y="125">Electoral contribution</text>
+  <text class="body" x="700" y="153">Candidate-specific</text>
+  <text class="body" x="700" y="174">over/under-performance</text>
+  <text class="note" x="700" y="202">Includes non-capability effects</text>
+
+  <rect class="box outcome" x="870" y="90" width="220" height="130"/>
+  <text class="heading" x="980" y="125">Electoral success</text>
+  <text class="body" x="980" y="153">Votes, rank, or winning</text>
+  <text class="note" x="980" y="202">Realized outcome</text>
+
+  <path class="arrow" d="M250 155 H300"/>
+  <path class="arrow" d="M530 155 H580"/>
+  <path class="arrow" d="M810 155 H860"/>
+  <text class="note" x="280" y="80">proxied, not identified</text>
+  <text class="note" x="560" y="80">interpreted contribution</text>
+  <text class="note" x="840" y="80">converts to outcome</text>
+
+  <text class="body" x="420" y="274">Campaign resources · networks · local shocks · scandals · organization · measurement error</text>
+  <path class="dashed" d="M420 258 V230"/>
+</svg>

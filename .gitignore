@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+.agents
+.codex
+
+# Large local datasets/results (exceed GitHub's regular file limits)
+data/TCPD_AE_All_States_2026-7-15/All_States_AE.csv
+data/TCPD_GA_All_States_2026-7-15/All_States_GA.csv
+experiments/results/vidhansabha_analysis.csv

@@ -1,0 +1,3 @@
+test,observed_female_coef,observed_p,permuted_coef_mean,permuted_coef_sd,permutation_two_sided_p,iterations,observed_auc_in_sample,permuted_auc_mean,permuted_auc_sd
+gender_permutation,-0.5442096065905037,0.1522147530895269,0.012963745461233932,0.3331391293981098,0.1,200,,,
+capability_permutation_for_renomination,,,,,,200,0.6677582176941534,0.6384074388283623,0.0012559514793301781

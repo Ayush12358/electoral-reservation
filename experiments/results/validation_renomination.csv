@@ -1,0 +1,23 @@
+,0
+n_2004_candidates,3051
+n_renominated,506
+renomination_rate,16.6
+renomination_rate_female,13.3
+renomination_rate_male,16.8
+capability_coef,0.0483
+capability_se,0.0071
+capability_p,0.0
+capability_or,1.0495
+gender_coef,-0.2962
+gender_p,0.1649
+auc,0.6676
+brier,0.1317
+cv_auc_mean,0.6604
+cv_auc_se,0.0157
+cv_brier_mean,0.1325
+cv_brier_se,0.0013
+cv_auc_folds,"{1: 0.6641, 2: 0.6738, 3: 0.6483, 4: 0.6102, 5: 0.7058}"
+high_cap_renomination,21.6
+low_cap_renomination,11.5
+female_high_cap_renomination,16.4
+female_low_cap_renomination,9.6

@@ -1,0 +1,13 @@
+Subset,N,N_female,Female_Coef,SE,P_value,CI_lower,CI_upper,Dimension
+2004,3051,210,-0.5209,0.5094,0.3065,-1.5193,0.4774,Year
+2009,4761,312,-0.5873,0.5382,0.2751,-1.6421,0.4675,Year
+Party: National,2199,181,-0.7883,0.9445,0.4039,-2.6396,1.063,Party Type
+Party: Regional/Other,5613,341,-0.3276,0.2946,0.2661,-0.905,0.2498,Party Type
+Seat: General,5409,343,-0.5123,0.504,0.3094,-1.5001,0.4755,Seat Type
+Seat: SC Reserved,1837,133,-0.0121,0.4817,0.98,-0.9561,0.932,Seat Type
+Seat: ST Reserved,566,46,-2.4823,1.6124,0.1237,-5.6426,0.6781,Seat Type
+Seat: Winnable,1207,110,-0.6192,1.1369,0.586,-2.8476,1.6092,Winnable
+Seat: Non-Winnable,6605,412,-0.2777,0.3518,0.43,-0.9672,0.4119,Winnable
+Capability: High Capability,3906,273,0.2359,0.3557,0.5071,-0.4612,0.933,Capability Level
+Capability: Low Capability,3906,249,-1.5122,0.5364,0.0048,-2.5635,-0.4608,Capability Level
+Full Sample,7812,522,-0.5442,0.3801,0.1522,-1.2892,0.2008,Full

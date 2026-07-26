@@ -1,0 +1,11 @@
+Model,Variable,Coef,SE,p_value,CI_lower,CI_upper
+Category × Gender,const,0.1139,0.2623,0.6641,-0.4001,0.628
+Category × Gender,FEMALE,-0.5115,0.5036,0.3098,-1.4985,0.4755
+Category × Gender,HAS_CRIMINAL,0.1228,0.3013,0.6835,-0.4676,0.7133
+Category × Gender,LOG_ASSETS,0.026,0.0179,0.1464,-0.0091,0.0612
+Category × Gender,EDU_NUM,-0.1421,0.0588,0.0156,-0.2573,-0.0269
+Category × Gender,YEAR_2009,-1.8529,0.1634,0.0,-2.1732,-1.5326
+Category × Gender,IS_SC,0.3564,0.172,0.0382,0.0194,0.6935
+Category × Gender,IS_ST,-0.2376,0.4386,0.588,-1.0972,0.622
+Category × Gender,FEMALE_SC,0.5208,0.6985,0.456,-0.8484,1.8899
+Category × Gender,FEMALE_ST,-1.9336,1.6951,0.254,-5.256,1.3888
