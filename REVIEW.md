@@ -85,8 +85,9 @@ clean-clone verification.
 
 * Confirm that redistribution of the tracked TCPD archives is consistent with
   the provider's current terms.
-* Publish the Zenodo record and add its assigned DOI to the paper, README, and
-  citation metadata.
+* The Zenodo record is published at
+  `https://doi.org/10.5281/zenodo.21591947`; use
+  `https://doi.org/10.5281/zenodo.21591946` for the evolving project.
 * If arXiv endorsement is obtained, publish the arXiv version and add its
   identifier to the repository and Zenodo record.
 

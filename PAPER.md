@@ -6,6 +6,7 @@
 **Acknowledgments:** Assistance with literature search, data analysis, and manuscript preparation provided by AI tools.
 **Date:** July 2026
 **Status:** Working paper draft
+**DOI:** [10.5281/zenodo.21591947](https://doi.org/10.5281/zenodo.21591947)
 
 ---
 

@@ -1,5 +1,7 @@
 # Electoral Reservation Measurement Study
 
+[![DOI](https://zenodo.org/badge/1312535492.svg)](https://doi.org/10.5281/zenodo.21591946)
+
 This repository contains the code and artifacts for a measurement/validation study of candidate capability and women's representation in Indian elections. It is the public replication repository accompanying the arXiv paper:
 
 > https://github.com/Ayush12358/electoral-reservation
@@ -10,10 +12,13 @@ The arXiv identifier will be added here after submission.
 
 - [Working-paper manuscript](PAPER.md)
 - [Compiled PDF](arxiv/main.pdf)
+- [Archived working paper (v0.1.0)](https://doi.org/10.5281/zenodo.21591947)
 - [arXiv source package](release/electoral_reservation_arxiv_v0.1.zip)
 - [Zenodo submission package](release/zenodo_submission_v0.1.0.zip)
 
 Current version: **Working Paper, Version 0.1 — July 2026**.
+Version DOI: [`10.5281/zenodo.21591947`](https://doi.org/10.5281/zenodo.21591947).
+All-versions DOI: [`10.5281/zenodo.21591946`](https://doi.org/10.5281/zenodo.21591946).
 
 ## Core idea
 - Measured electoral contribution is operationalized as a party-normalized vote-share residual, treated as an imperfect proxy for latent capability.
@@ -84,6 +89,12 @@ the converted PNG figure, ASCII-safe submission metadata, and a package README. 
 does not contain the underlying election datasets.
 
 ## Zenodo working-paper package
+
+The published v0.1.0 record is available at
+[`10.5281/zenodo.21591947`](https://doi.org/10.5281/zenodo.21591947).
+Use the repository's all-versions DOI,
+[`10.5281/zenodo.21591946`](https://doi.org/10.5281/zenodo.21591946), when
+citing the evolving project rather than this specific release.
 
 Build the prepared Zenodo deposit files with:
 
