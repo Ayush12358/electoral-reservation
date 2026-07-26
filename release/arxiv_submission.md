@@ -30,4 +30,4 @@ https://github.com/Ayush12358/electoral-reservation.
 
 - Record the assigned identifier here: `arXiv: pending`.
 - Add the arXiv URL and identifier to `README.md`, `PAPER.md`, and `CITATION.cff`.
-- Tag the matching GitHub source state as `v0.1.0`.
+- GitHub source state released as `v0.1.0`.

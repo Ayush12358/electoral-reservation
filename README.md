@@ -6,6 +6,15 @@ This repository contains the code and artifacts for a measurement/validation stu
 
 The arXiv identifier will be added here after submission.
 
+## Read the working paper
+
+- [Working-paper manuscript](PAPER.md)
+- [Compiled PDF](arxiv/main.pdf)
+- [arXiv source package](release/electoral_reservation_arxiv_v0.1.zip)
+- [Zenodo submission package](release/zenodo_submission_v0.1.0.zip)
+
+Current version: **Working Paper, Version 0.1 — July 2026**.
+
 ## Core idea
 - Measured electoral contribution is operationalized as a party-normalized vote-share residual, treated as an imperfect proxy for latent capability.
 - The main empirical question is whether nomination, seat quality, or vote conversion drives gender gaps.
