@@ -794,7 +794,7 @@ The descriptive nomination bottleneck is consistent with Lok Sabha, but the conv
 - Inter-Parliamentary Union. (2026). "Women's Representation in Parliament Sees Sluggish Gains." https://www.ipu.org/news/press-releases/2026-03/womens-representation-in-parliament-sees-sluggish-gains
 - PRS Legislative Research. (2024). "Profile of the 18th Lok Sabha." https://prsindia.org/parliamenttrack/vital-stats/profile-of-the-18th-lok-sabha
 - PRS Legislative Research. (2019). "Vital Stats: Women in Parliament and State Assemblies." 17th Lok Sabha. https://prsindia.org/parliamenttrack/vital-stats/women-in-parliament-and-state-assemblies
-- Trivedi, P., & Chowdhury, A. (2024). "TCPD Indian Elections Dataset." Tata Centre for Development and Policy Research, Indian Institute of Management Ahmedabad. https://tcpd.ashoka.edu.in/
+- Agarwal, A., Agrawal, N., Bhogale, S., Hangal, S., Jensenius, F. R., Kumar, M., Narayan, C., Nissa, B. U., Trivedi, P., & Verniers, G. (2021). "TCPD Indian Elections Data v2.0." Trivedi Centre for Political Data, Ashoka University. https://lokdhaba.ashoka.edu.in/
 
 ### Legal Sources
 

@@ -12,6 +12,26 @@ This repository contains the code and artifacts for a measurement/validation stu
 - `data/TCPD_GE_All_States_2026-7-15/`: TCPD Lok Sabha extension (2004, 2009, 2014, 2019)
 - `data/TCPD_AE_All_States_2026-7-15/`: TCPD Vidhan Sabha replication
 
+## Obtaining the TCPD data
+The TCPD Indian Elections Dataset was downloaded from [Lok Dhaba](https://lokdhaba.ashoka.edu.in/),
+the Trivedi Centre for Political Data's election-data portal at Ashoka University. Download the
+all-states CSV exports and place them at:
+
+- `data/TCPD_GE_All_States_2026-7-15/All_States_GE.csv`
+- `data/TCPD_AE_All_States_2026-7-15/All_States_AE.csv`
+- `data/TCPD_GA_All_States_2026-7-15/All_States_GA.csv`
+
+The AE and GA exports are excluded from Git because of GitHub's file-size limits. The generated
+`experiments/results/vidhansabha_analysis.csv` is excluded for the same reason. Expected file sizes
+and SHA-256 checksums are recorded in `data/provenance_checksums.json`.
+
+The Lok Dhaba codebook permits no-cost, non-commercial reuse subject to its terms and attribution
+requirements. Cite the dataset as:
+
+> Agarwal, Ananay, Neelesh Agrawal, Saloni Bhogale, Sudheendra Hangal, Francesca Refsum Jensenius,
+> Mohit Kumar, Chinmay Narayan, Basim U Nissa, Priyamvada Trivedi, and Gilles Verniers. 2021.
+> "TCPD Indian Elections Data v2.0." Trivedi Centre for Political Data, Ashoka University.
+
 ## Dependencies
 ```bash
 pip install -r requirements.txt
