@@ -74,6 +74,20 @@ The ZIP contains the LaTeX source, `references.bib`, the self-contained `main.bb
 the converted PNG figure, ASCII-safe submission metadata, and a package README. It
 does not contain the underlying election datasets.
 
+## Zenodo working-paper package
+
+Build the prepared Zenodo deposit files with:
+
+```bash
+python scripts/build_zenodo_package.py
+```
+
+The resulting `zenodo/` directory contains the working-paper PDF, LaTeX source,
+raw-data-free replication archive, checksums, metadata, and upload instructions.
+`release/zenodo_submission_v0.1.0.zip` is a convenience bundle; upload the files
+inside it individually so Zenodo can preview the PDF. Publication and license
+selection remain manual, author-controlled actions.
+
 Optional knobs:
 ```bash
 FULL_BOOT_N=100 RUN_EXTENDED=1 bash scripts/reproduce.sh

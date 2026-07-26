@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "workingpaper",
+    "publication_date": "2026-07-26",
+    "title": "Electoral Capability, Party Gatekeeping, and the Exit Threshold for Institutional Correction",
+    "creators": [
+      {
+        "name": "Maurya, Ayush"
+      }
+    ],
+    "description": "<p>Working Paper, Version 0.1. This study develops and validates a computational measurement framework for decomposing representation shortfalls into candidacy representation, seat quality, and vote-conversion stages. It applies a party-normalized electoral-contribution residual to Indian parliamentary and state-assembly elections and documents the limits of the measure as a descriptive, non-causal proxy.</p><p>Code, documentation, and reproducibility materials: <a href=\"https://github.com/Ayush12358/electoral-reservation\">https://github.com/Ayush12358/electoral-reservation</a>.</p>",
+    "version": "0.1.0",
+    "language": "eng",
+    "access_right": "closed",
+    "keywords": [
+      "computational social science",
+      "statistical measurement",
+      "electoral representation",
+      "party gatekeeping",
+      "women's representation",
+      "India",
+      "reproducibility"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/Ayush12358/electoral-reservation",
+        "relation": "isSupplementedBy",
+        "resource_type": "software"
+      }
+    ],
+    "notes": "The replication archive excludes raw data directories. Third-party election data remain subject to their providers' terms and are not relicensed by this deposit."
+  }
+}
