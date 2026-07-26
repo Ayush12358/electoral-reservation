@@ -28,8 +28,6 @@ def load_tcpd_ge(years=(2004, 2009, 2014, 2019)) -> pd.DataFrame:
 
     # Standardize sex
     df["Sex"] = df["Sex"].str.upper().str.strip()
-    df = df[df["Sex"].isin(["M", "F"])].copy()
-    df["FEMALE"] = (df["Sex"] == "F").astype(int)
 
     # Filter years if requested; allow full-history loads for rolling sensitivity analyses.
     if years is not None:
@@ -47,6 +45,10 @@ def load_tcpd_ge(years=(2004, 2009, 2014, 2019)) -> pd.DataFrame:
     # Drop rows with missing key fields
     df = df.dropna(subset=["Votes", "Vote_Share_Percentage"])
     df = df[df["Votes"] > 0].copy()
+    # TCPD supplies vote share from all valid votes. Restrict gender only after
+    # preserving those election-result fields.
+    df = df[df["Sex"].isin(["M", "F"])].copy()
+    df["FEMALE"] = (df["Sex"] == "F").astype(int)
 
     # Clean keys
     df["STATE_CLEAN"] = df["State_Name"].str.replace("_", " ").str.strip().str.upper()
@@ -78,6 +80,8 @@ def load_tcpd_ge(years=(2004, 2009, 2014, 2019)) -> pd.DataFrame:
         "Illiterate": 0, "Not Given": np.nan, "Others": np.nan,
     }
     df["EDU_NUM"] = df["MyNeta_education"].map(edu_map)
+    df["EDU_MISSING"] = df["EDU_NUM"].isna().astype(int)
+    df["EDU_NUM"] = df["EDU_NUM"].fillna(df["EDU_NUM"].median())
 
     # Profession flags
     prof = df["TCPD_Prof_Main_Desc"].fillna("").str.lower()
@@ -142,6 +146,8 @@ def load_tcpd_ae(years=None) -> pd.DataFrame:
         "Illiterate": 0, "Not Given": np.nan, "Others": np.nan,
     }
     df["EDU_NUM"] = df["MyNeta_education"].map(edu_map)
+    df["EDU_MISSING"] = df["EDU_NUM"].isna().astype(int)
+    df["EDU_NUM"] = df["EDU_NUM"].fillna(df["EDU_NUM"].median())
     df["WINNER"] = (df["Position"] == 1).astype(int)
 
     return df
@@ -165,14 +171,19 @@ def add_tcpd_expected_vote_share(df: pd.DataFrame) -> pd.DataFrame:
         yr_df = df[df["Year"] == year].copy()
 
         if i == 0:
-            # First election: use party-state mean
+            # First election: use a leave-one-out party-state mean so a
+            # candidate's outcome does not enter their own expectation.
             party_state = yr_df.groupby(["STATE_CLEAN", "PARTY_CLEAN"], observed=True).agg(
-                STATE_AVG_SHARE=("Vote_Share_Percentage", "mean"),
+                STATE_SHARE_SUM=("Vote_Share_Percentage", "sum"),
                 GROUP_SIZE=("Vote_Share_Percentage", "size"),
             ).reset_index()
             yr_df = yr_df.merge(party_state, on=["STATE_CLEAN", "PARTY_CLEAN"], how="left")
-            yr_df["EXPECTED_VOTE_SHARE"] = yr_df["STATE_AVG_SHARE"]
-            yr_df["EXPECTED_SOURCE"] = f"party-state mean ({year})"
+            yr_df["EXPECTED_VOTE_SHARE"] = np.where(
+                yr_df["GROUP_SIZE"] > 1,
+                (yr_df["STATE_SHARE_SUM"] - yr_df["Vote_Share_Percentage"]) / (yr_df["GROUP_SIZE"] - 1),
+                np.nan,
+            )
+            yr_df["EXPECTED_SOURCE"] = f"leave-one-out party-state mean ({year})"
         else:
             prev_year = years[i - 1]
             prev_df = df[df["Year"] == prev_year]

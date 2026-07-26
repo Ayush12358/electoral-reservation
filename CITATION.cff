@@ -1,14 +1,14 @@
 cff-version: 1.2.0
 title: "Electoral Capability, Party Gatekeeping, and the Exit Threshold for Institutional Correction"
-message: "If you use this computational measurement framework or replication package, please cite this release."
+message: "Please cite the accompanying arXiv paper and mention this GitHub replication repository."
 type: software
 authors:
   - family-names: Maurya
     given-names: Ayush
 version: "0.1.0"
 date-released: 2026-07-17
-repository-code: "https://github.com/Ayush12358/ai_papers"
-url: "https://github.com/Ayush12358/ai_papers/tree/main/papers/electoral-reservation"
+repository-code: "https://github.com/Ayush12358/electoral-reservation"
+url: "https://github.com/Ayush12358/electoral-reservation"
 keywords:
   - candidate capability
   - party gatekeeping

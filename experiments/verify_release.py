@@ -32,7 +32,7 @@ def main() -> None:
     if len(members) != manifest["n_members"]:
         raise AssertionError(f"Archive member count mismatch: {len(members)} != {manifest['n_members']}")
 
-    required = manifest["included_top_level_artifacts"] + ["release/zenodo.json"]
+    required = manifest["included_top_level_artifacts"] + ["release/arxiv_submission.md"]
     missing = [name for name in required if name not in members]
     if missing:
         raise AssertionError(f"Required archive members missing: {missing}")
@@ -41,7 +41,10 @@ def main() -> None:
     for marker in ("cff-version: 1.2.0", "title:", "authors:", "version:", "date-released:"):
         if marker not in citation:
             raise AssertionError(f"CITATION.cff missing marker: {marker}")
-    json.loads((ROOT / "release" / "zenodo.json").read_text(encoding="utf-8"))
+    arxiv = (ROOT / "release" / "arxiv_submission.md").read_text(encoding="utf-8")
+    repository_url = "https://github.com/Ayush12358/electoral-reservation"
+    if repository_url not in arxiv or repository_url not in citation:
+        raise AssertionError("arXiv checklist and CITATION.cff must name the GitHub repository")
     print(f"Release verified: {archive.name} ({len(members)} members, SHA-256 {observed_hash})")
 
 

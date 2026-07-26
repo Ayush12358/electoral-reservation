@@ -1,6 +1,10 @@
 # Electoral Reservation Measurement Study
 
-This repository contains the code and artifacts for a measurement/validation study of candidate capability and women's representation in Indian elections.
+This repository contains the code and artifacts for a measurement/validation study of candidate capability and women's representation in Indian elections. It is the public replication repository accompanying the arXiv paper:
+
+> https://github.com/Ayush12358/electoral-reservation
+
+The arXiv identifier will be added here after submission.
 
 ## Core idea
 - Measured electoral contribution is operationalized as a party-normalized vote-share residual, treated as an imperfect proxy for latent capability.
@@ -54,6 +58,22 @@ bash scripts/reproduce.sh
 
 The launcher selects `python`, `py.exe`, or `python3` automatically. Set `PYTHON_BIN` to override the selection.
 
+## arXiv manuscript package
+
+The submission-ready source bundle is `release/electoral_reservation_arxiv_v0.1.zip`.
+Its top-level source is `arxiv/main.tex`, and the locally compiled review copy is
+`arxiv/main.pdf`.
+
+Rebuild the source package after changing `PAPER.md`:
+
+```bash
+python scripts/build_arxiv_package.py
+```
+
+The ZIP contains the LaTeX source, `references.bib`, the self-contained `main.bbl`,
+the converted PNG figure, ASCII-safe submission metadata, and a package README. It
+does not contain the underlying election datasets.
+
 Optional knobs:
 ```bash
 FULL_BOOT_N=100 RUN_EXTENDED=1 bash scripts/reproduce.sh
@@ -99,6 +119,6 @@ All scripts write CSV/JSON outputs to `experiments/results/`.
 - Sampling and full-pipeline bootstrap results are available.
 - A local frozen release snapshot is available in `release/`; remaining work is tracked in `PLAN.md`.
 - `scripts/build_release.py` creates the archive deterministically; `experiments/verify_release.py` checks its checksum, member count, and required artifacts.
-- `CITATION.cff` and `release/zenodo.json` provide DOI deposition metadata; publication still requires an external Zenodo upload.
+- `CITATION.cff` describes the GitHub replication package, and `release/arxiv_submission.md` records the arXiv submission checklist and repository statement.
 - Criterion validation, exit-test calibration, state-assembly portability, fuzzy-link sensitivity, and official-source claim audits are implemented.
 - Human fuzzy-link adjudication and convergent validation using appointments or expert assessments remain open-data tasks.

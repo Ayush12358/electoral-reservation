@@ -25,7 +25,6 @@ candidates_2009 = set(full.loc[full["YEAR"] == 2009, "NAME_CLEAN"])
 
 d = df[df["YEAR"] == 2004].copy()
 d["RENOMINATED_2009"] = d["NAME_CLEAN"].isin(candidates_2009).astype(int)
-d["EDU_NUM"] = d["EDU_NUM"].fillna(0)
 
 print(f"  2004 matched candidates: {len(d)}")
 print(f"  Female: {d['FEMALE'].sum()} ({d['FEMALE'].mean()*100:.1f}%)")
@@ -37,7 +36,7 @@ y = d["RENOMINATED_2009"].astype(int)
 for name, cols in {
     "bivariate_capability": ["CAPABILITY"],
     "capability_plus_gender": ["CAPABILITY", "FEMALE"],
-    "full_controls": ["CAPABILITY", "FEMALE", "HAS_CRIMINAL", "LOG_ASSETS", "EDU_NUM"],
+    "full_controls": ["CAPABILITY", "FEMALE", "HAS_CRIMINAL", "LOG_ASSETS", "EDU_NUM", "EDU_MISSING"],
 }.items():
     X = sm.add_constant(d[cols].astype(float), has_constant="add")
     models[name] = sm.Logit(y, X).fit(disp=0)
@@ -46,7 +45,7 @@ m = models["full_controls"]
 print(m.summary().tables[1])
 
 # In-sample and CV predictive metrics
-cols = ["CAPABILITY", "FEMALE", "HAS_CRIMINAL", "LOG_ASSETS", "EDU_NUM"]
+cols = ["CAPABILITY", "FEMALE", "HAS_CRIMINAL", "LOG_ASSETS", "EDU_NUM", "EDU_MISSING"]
 X_all = d[cols].astype(float).fillna(0)
 d["PRED_PROB"] = m.predict(sm.add_constant(X_all, has_constant="add"))
 auc = roc_auc_score(y, d["PRED_PROB"])

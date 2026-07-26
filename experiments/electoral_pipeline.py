@@ -61,7 +61,6 @@ def name_similarity(a: object, b: object) -> float:
 def load_parliament(years: Iterable[int] = (2004, 2009)) -> pd.DataFrame:
     parliament = pd.read_csv(DATA_DIR / "parliament_final.csv", low_memory=False)
     parliament["SEX"] = parliament["SEX"].astype(str).str.strip().str.upper()
-    parliament = parliament[parliament["SEX"].isin(["M", "F"])].copy()
     parliament = parliament[parliament["YEAR"].isin(list(years))].copy()
     parliament["VOTES"] = pd.to_numeric(parliament["VOTES"], errors="coerce")
     parliament = parliament.dropna(subset=["VOTES"])
@@ -77,6 +76,9 @@ def load_parliament(years: Iterable[int] = (2004, 2009)) -> pd.DataFrame:
     parliament["TOTAL_VOTES"] = parliament.groupby(["YEAR", "PC"], observed=True)["VOTES"].transform("sum")
     parliament["VOTE_SHARE"] = parliament["VOTES"] / parliament["TOTAL_VOTES"] * 100
     parliament["WINNER"] = (parliament.groupby(["YEAR", "PC"], observed=True)["VOTES"].rank(method="first", ascending=False) == 1).astype(int)
+    # Keep every valid vote record in the denominator, then restrict the
+    # candidate-level analytical sample to observations with usable gender.
+    parliament = parliament[parliament["SEX"].isin(["M", "F"])].copy()
     return parliament
 
 
@@ -110,12 +112,22 @@ def add_expected_vote_share(parliament: pd.DataFrame) -> pd.DataFrame:
     df_2009 = parliament[parliament["YEAR"] == 2009].copy()
 
     party_state_2004 = df_2004.groupby(["STATE", "PARTY"], observed=True).agg(
-        STATE_AVG_SHARE=("VOTE_SHARE", "mean"),
+        STATE_SHARE_SUM=("VOTE_SHARE", "sum"),
         GROUP_SIZE=("VOTE_SHARE", "size"),
     ).reset_index()
+    party_state_2004["STATE_AVG_SHARE"] = (
+        party_state_2004["STATE_SHARE_SUM"] / party_state_2004["GROUP_SIZE"]
+    )
     df_2004 = df_2004.merge(party_state_2004, on=["STATE", "PARTY"], how="left")
-    df_2004["EXPECTED_VOTE_SHARE"] = df_2004["STATE_AVG_SHARE"]
-    df_2004["EXPECTED_SOURCE"] = "party-state mean (2004)"
+    # A contemporaneous baseline must not contain the focal candidate's own
+    # outcome. Singleton party-state groups have no defensible LOO baseline and
+    # are excluded from the primary specification below.
+    df_2004["EXPECTED_VOTE_SHARE"] = np.where(
+        df_2004["GROUP_SIZE"] > 1,
+        (df_2004["STATE_SHARE_SUM"] - df_2004["VOTE_SHARE"]) / (df_2004["GROUP_SIZE"] - 1),
+        np.nan,
+    )
+    df_2004["EXPECTED_SOURCE"] = "leave-one-out party-state mean (2004)"
 
     party_const_2004 = df_2004.groupby(["PC", "PARTY"], observed=True).agg(
         PARTY_CONST_SHARE=("VOTE_SHARE", "mean")
@@ -180,10 +192,12 @@ def build_analysis_dataset(years: Iterable[int] = (2004, 2009), matched_only: bo
         df = merged[merged["MERGED"] == 1].copy()
     else:
         df = merged.copy()
+    df["EDU_MISSING"] = df["EDU_NUM"].isna().astype(int)
     for col in ["HAS_CRIMINAL", "LOG_ASSETS", "EDU_NUM"]:
         if col in df:
             if col == "EDU_NUM":
-                df[col] = df[col].fillna(0)
+                median = df[col].median() if df[col].notna().any() else 0
+                df[col] = df[col].fillna(median)
             else:
                 df[col] = df[col].fillna(df[col].median() if df[col].notna().any() else 0)
     return df, merged

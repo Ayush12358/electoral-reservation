@@ -39,7 +39,7 @@ model_specs = [
     ("Bivariate", ["FEMALE"]),
     ("+ Year FE", ["FEMALE", "YEAR_2009"]),
     ("+ Criminal + Assets", ["FEMALE", "HAS_CRIMINAL", "LOG_ASSETS"]),
-    ("Full controls", ["FEMALE", "HAS_CRIMINAL", "LOG_ASSETS", "EDU_NUM", "YEAR_2009"]),
+    ("Full controls", ["FEMALE", "HAS_CRIMINAL", "LOG_ASSETS", "EDU_NUM", "EDU_MISSING", "YEAR_2009"]),
 ]
 
 for name, cols in model_specs:
@@ -65,7 +65,7 @@ if "GROUP_SIZE" in df_analysis.columns:
 else:
     df_multi = df_analysis.copy()
 if len(df_multi) > 0:
-    X = sm.add_constant(df_multi[["FEMALE", "HAS_CRIMINAL", "LOG_ASSETS", "EDU_NUM", "YEAR_2009"]].astype(float))
+    X = sm.add_constant(df_multi[["FEMALE", "HAS_CRIMINAL", "LOG_ASSETS", "EDU_NUM", "EDU_MISSING", "YEAR_2009"]].astype(float))
     m = sm.OLS(df_multi["CAPABILITY"].astype(float), X).fit(cov_type="HC3")
     ci = m.conf_int().loc["FEMALE"]
     models.append({

@@ -32,12 +32,12 @@ def main():
     checks: list[tuple[str, str, str, bool]] = []
 
     core = read_series("summary_with_controls.csv")
-    require_close("Core female coefficient", float(core["full_controls_female_coef"]), -0.5442)
-    checks.append(("Core full-control female coefficient", "summary_with_controls.csv", "−0.54 pp", "−0.54 pp" in paper))
+    require_close("Core female coefficient", float(core["full_controls_female_coef"]), -0.5983)
+    checks.append(("Core full-control female coefficient", "summary_with_controls.csv", "−0.60 pp", "−0.60 pp" in paper))
 
     renom = read_series("validation_renomination.csv")
-    require_close("Renomination CV AUC", float(renom["cv_auc_mean"]), 0.6604)
-    checks.append(("Renomination CV AUC", "validation_renomination.csv", "0.660", "CV AUC = 0.660" in paper))
+    require_close("Renomination CV AUC", float(renom["cv_auc_mean"]), 0.6696)
+    checks.append(("Renomination CV AUC", "validation_renomination.csv", "0.670", "CV AUC = 0.670" in paper))
 
     future = pd.read_csv(RESULTS / "tcpd_future_performance_validation.csv")
     vote = future.loc[future["outcome"] == "next_election_vote_share"].iloc[0]

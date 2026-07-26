@@ -10,8 +10,8 @@ Audits the major quantitative claims introduced or relied on by the current revi
 
 | Claim | Artifact | Manuscript value | Status |
 |---|---|---|---|
-| Core full-control female coefficient | `summary_with_controls.csv` | −0.54 pp | verified |
-| Renomination CV AUC | `validation_renomination.csv` | 0.660 | verified |
+| Core full-control female coefficient | `summary_with_controls.csv` | −0.60 pp | verified |
+| Renomination CV AUC | `validation_renomination.csv` | 0.670 | verified |
 | Future vote-share criterion coefficient | `tcpd_future_performance_validation.csv` | −0.061 pp | verified |
 | Future-win criterion odds ratio | `tcpd_future_performance_validation.csv` | 1.001 | verified |
 | Accept-all fuzzy-link sensitivity | `fuzzy_match_sensitivity.csv` | −0.65 pp | verified |

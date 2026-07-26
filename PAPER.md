@@ -11,7 +11,7 @@
 
 ## Abstract
 
-We introduce a computational measurement framework and provide an initial empirical validation of its measurement properties. The framework should be interpreted as a proof-of-concept rather than a fully validated measurement instrument. The core contribution is a conceptual decomposition: representation deficits occur through sequential institutional filters — nomination, seat quality, and vote conversion — each of which is independently measurable. We operationalize measured electoral contribution as a party-normalized residual: an observable proxy for latent capability, not capability itself. We evaluate the framework using Indian parliamentary elections (2004–2009), a TCPD extension through 2019, and a five-state Vidhan Sabha replication. The strongest substantive finding is the diagnostic decomposition: underrepresentation concentrates overwhelmingly at nomination (women are 6.7% of matched candidates versus the contemporary 48.6% female-elector benchmark), while the vote-conversion gap is small and statistically uncertain. Within the observed nominated sample, measured electoral contribution differs little by gender after conditioning on observed covariates (−0.54 pp, SE: 0.38, p = 0.15, 95% CI: [−1.29, +0.20]); this estimate does not generalize to potential candidates because nomination is endogenous. Validation is mixed: the residual predicts 2009 renomination (OR = 1.05 per percentage point, cross-validated AUC = 0.66), but adds little to current vote share for predicting later vote share or winning among selected TCPD recontesters. The exit diagnostic is evaluated over 100 threshold and persistence choices; no combination yields a pass on the three observable conditions, while distributional breadth remains unmeasured. The five-state replication demonstrates institutional-setting portability with heterogeneous results; portability to other groups remains an open question.
+We introduce a computational measurement framework and provide an initial empirical validation of its measurement properties. The framework should be interpreted as a proof-of-concept rather than a fully validated measurement instrument. The core contribution is a conceptual decomposition: representation deficits occur through sequential institutional filters — nomination, seat quality, and vote conversion — each of which is independently measurable. We operationalize measured electoral contribution as a party-normalized residual: an observable proxy for latent capability, not capability itself. We evaluate the framework using Indian parliamentary elections (2004–2009), a TCPD extension through 2019, and a five-state Vidhan Sabha replication. The strongest substantive finding is the diagnostic decomposition: the largest observed disparity is the candidacy representation gap (women are 6.6% of matched candidates versus the contemporary 48.6% female-elector benchmark), while the vote-conversion gap is small and statistically uncertain. Within the observed nominated sample, measured electoral contribution differs little by gender after conditioning on observed covariates (−0.60 pp, SE: 0.40, p = 0.14, 95% CI: [−1.39, +0.19]); this estimate does not generalize to potential candidates because nomination is endogenous. Validation is mixed: the residual predicts 2009 renomination (OR = 1.05 per percentage point, cross-validated AUC = 0.66), but adds little to current vote share for predicting later vote share or winning among selected TCPD recontesters. The exit diagnostic is evaluated over 100 threshold and persistence choices; no combination yields a pass on the three observable conditions, while distributional breadth remains unmeasured. The five-state replication demonstrates institutional-setting portability with heterogeneous results; portability to other groups remains an open question.
 
 **Keywords:** candidate capability, party gatekeeping, women's representation, electoral reservation, India, quota exit
 
@@ -51,7 +51,7 @@ In the Indian context, the residual approach faces particular challenges. India'
 
 The literature on women's representation in India consistently identifies party nomination as the primary bottleneck. Spary (2014) examines party nomination patterns in the 2009 general election and finds that parties are risk-averse regarding female nominations, restricting their numbers, though she rejects the claim that parties systematically place women in unwinnable seats. The picture is more nuanced: parties simply do not nominate enough women, and the ones they do nominate are not placed in the worst seats — but neither are they placed in the best seats.
 
-CASI research (Bhowmick) documents that candidate selection committees remain male-dominated, and women's entry is largely filtered through family pipelines rather than independent organizational advancement. This supports the nomination deficit thesis: the barrier is not voter rejection but party gatekeeping.
+CASI research (Bhowmick) documents that candidate selection committees remain male-dominated, and women's entry is largely filtered through family pipelines rather than independent organizational advancement. This is evidence consistent with party gatekeeping, although the available data do not observe nomination aspirants or directly estimate their ticket probabilities.
 
 ADR's 2026 analysis reports that, within its defined party-ticket universe, no national party met the 33% benchmark for female candidate distribution. This is an attributed research finding, not an official all-party census; the enacted reservation's seat provisions were not yet operative. The Hindu reported that only 10.2% of women were fielded in 20 state assembly elections since the bill's passage.
 
@@ -240,7 +240,7 @@ The implemented analysis uses the data currently available in this replication d
 | Constituency demographics and stable post-delimitation identifiers | Census, ECI delimitation | Not yet integrated | Planned |
 | Lok Sabha 2024 | ECI/ADR/TCPD | Not present locally | Not implemented |
 
-A correction was made during implementation: constituency total votes and candidate vote shares are now computed on the full election-results table before merging to MyNeta controls. This prevents matched-candidate-only denominators from inflating vote shares and residuals. The corrected matched analysis sample contains 7,812 candidates.
+A correction was made during implementation: constituency total votes and candidate vote shares are computed from every valid candidate vote record before restricting to usable gender and merging to MyNeta controls. The 2004 contemporaneous party–state baseline is leave-one-out, with singleton groups excluded. The corrected matched analysis sample contains 7,639 candidates.
 
 ### 4.2 Empirical Specification
 
@@ -278,23 +278,23 @@ Compute the three stage-specific quantities as described in Section 3.3 — nomi
 
 A new proxy requires validation against related but distinct outcomes, alongside clear limits on what such tests can establish. We implement two criterion-validity exercises: 2004 measured electoral contribution predicting 2009 renomination in the MyNeta-matched sample, and contribution in the TCPD 2004–2014 source elections predicting performance at the next scheduled Lok Sabha election among recontesting candidates.
 
-**Predictive validity (implemented):** Among 3,051 matched candidates in 2004, 506 (16.6%) were renominated in 2009. A logistic regression predicting renomination from 2004 measured electoral contribution, controlling for gender, criminal cases, assets, and education, yields:
+**Predictive validity (implemented):** Among 2,878 matched candidates with a valid leave-one-out 2004 baseline, 472 (16.4%) were renominated in 2009. A logistic regression predicting renomination from 2004 measured electoral contribution, controlling for gender, criminal cases, assets, education, and missing education, yields:
 
 | Predictor | Odds Ratio | Coef / SE | p-value |
 |---|---:|---:|---:|
-| Capability (2004) | 1.050 | 0.048 / 0.007 | <0.001 |
+| Capability (2004) | 1.046 | 0.045 / 0.007 | <0.001 |
 | Female | 0.744 | −0.296 / 0.213 | 0.165 |
 | Has Criminal Cases | 1.387 | 0.327 / 0.130 | 0.012 |
 | Log Assets | 1.077 | 0.074 / 0.017 | <0.001 |
-| Education | 1.162 | 0.150 / 0.036 | <0.001 |
+| Education | 1.203 | 0.185 / 0.048 | <0.001 |
 
-Each 1 percentage-point increase in capability increases the odds of renomination by about 5.0% (OR = 1.050, p < 0.001). The full-sample AUC is 0.668 and the Brier score is 0.132. **5-fold cross-validation** produces an AUC of 0.660 (SE = 0.016), with fold-level estimates ranging from 0.610 to 0.706. High-capability candidates are renominated at 21.6% vs. 11.5% for low-capability candidates.
+Each 1 percentage-point increase in capability increases the odds of renomination by about 4.6% (OR = 1.046, p < 0.001). The full-sample AUC is 0.673 and the Brier score is 0.130. **5-fold cross-validation** gives CV AUC = 0.670 (SE = 0.009), with fold-level estimates ranging from 0.640 to 0.692. High-capability candidates are renominated at 21.3% vs. 11.5% for low-capability candidates.
 
 **Known-groups validity:** The measured-contribution proxy discriminates between groups in expected directions:
-- High capability: 21.6% renomination rate
+- High capability: 21.3% renomination rate
 - Low capability: 11.5% renomination rate
-- Female high capability: 16.4% renomination rate
-- Female low capability: 9.6% renomination rate
+- Female high capability: 16.8% renomination rate
+- Female low capability: 10.3% renomination rate
 
 **Incremental validity:** Capability is predictive, but it does not dominate raw vote share for predicting renomination. In 5-fold cross-validation, raw vote share + controls achieves AUC = 0.692, capability + controls achieves AUC = 0.660, and raw vote share + capability + controls reaches AUC = 0.696. The residual therefore adds modest incremental signal when paired with raw vote share (+0.004 AUC), but raw vote share remains the stronger single benchmark for this particular outcome. This is a constraint on the measurement claim, not a failure of the decomposition: renomination is partly a party-selection decision that may reward observed vote share directly.
 
@@ -390,8 +390,8 @@ Women's representation in Indian legislatures has remained stubbornly low:
 | Election | Women Candidates (%) | Women Winners | Women Winners (%) |
 |---|---|---|---|
 | 2004 | ~7% (ECI) | 45 | 8.3% |
-| 2009 | 7% | 58 | 10.7% |
-| 2014 | 8% | 61 | 11.2% |
+| 2009 | 7% | 59 | 10.9% |
+| 2014 | 8% | 62 | 11.4% |
 | 2019 | 9% | 78 | 14.4% |
 | 2024 | 9.6% (800 of 8,360) | 74 | 13.6% |
 
@@ -410,16 +410,16 @@ The 2024 election represented a regression — both in the number of women MPs (
 
 ### 5.2 The Party Dimension
 
-The bottleneck is not voter rejection — it is party nomination behavior:
+The observed evidence shows a large candidacy representation gap and is consistent with party gatekeeping; it does not directly identify nomination discrimination because nomination aspirants are unobserved:
 
 - ADR's 2026 ticket-distribution analysis reports that no national party in its defined universe met the 33% benchmark
 - TMC had the highest proportion of women MPs at 38% (11 of 29)
-- BJP elected 30–31 women MPs; Congress elected 13–14
+- Party-specific winner counts are omitted here pending a single authoritative, election-specific source
 - Across parties with 10+ MPs in 2019, women were as likely to win as men (PRS analysis)
 
 When women receive comparable tickets, their performance appears similar to men's — suggesting the barrier is nomination, not conversion. However, this is a descriptive finding from PRS that does not control for party baseline, seat type, or other covariates — formal analysis is needed.
 
-### 5.3 The Nomination Deficit
+### 5.3 The Candidacy Representation Gap
 
 Descriptive evidence is consistent with Stage 1 as a primary barrier:
 
@@ -427,7 +427,7 @@ Descriptive evidence is consistent with Stage 1 as a primary barrier:
 - ADR's defined party-ticket universe did not meet the 33% benchmark
 - ADR found that only 10.2% of women were fielded in 20 state assembly elections since the Women's Reservation Bill's passage
 
-Complementary evidence from the TCPD-AID panel confirms the gatekeeping bottleneck at scale: among major-party candidates across multiple election cycles, male candidates received 92.89% of tickets — the female nomination deficit is structural, not episodic. However, the reservation of SC/ST seats modestly expands the female candidate pool: the odds of a party nominating a woman are 1.27 times higher in reserved constituencies than in General constituencies, suggesting that caste-based institutional correction creates a partial pipeline for gender diversity.
+Complementary evidence from the TCPD-AID panel documents the representation shortfall at scale: among observed major-party candidates across multiple election cycles, 92.89% were men. This is evidence consistent with party gatekeeping, not a direct estimate of ticket probabilities among aspirants. The reservation of SC/ST seats modestly expands the observed female candidate pool: the odds that an observed candidate is a woman are 1.27 times higher in reserved constituencies than in General constituencies, suggesting that caste-based institutional correction may create a partial pipeline for gender diversity.
 
 Spary (2014) confirms that parties are risk-averse regarding female nominations. CASI research (Bhowmick) documents that candidate selection committees remain male-dominated and women's entry is filtered through family pipelines.
 
@@ -449,31 +449,31 @@ TCPD-AID evidence adds a nuance: the electoral premium on education is actually 
 
 ### 5.6 Empirical Results (2004–2009)
 
-We apply the party-normalized measured-contribution framework to candidate-level data from the 2004 and 2009 Lok Sabha elections. Data sources: gitcheckoutnikhil/india-election-data (votes, gender) and ADR/MyNeta (criminal cases, assets, education). After corrected matching and one-row-per-candidate deduplication, the analysis sample is N = 7,812 candidates with complete controls.
+We apply the party-normalized measured-contribution framework to candidate-level data from the 2004 and 2009 Lok Sabha elections. Data sources: gitcheckoutnikhil/india-election-data (votes, gender) and ADR/MyNeta (criminal cases, assets, education). After corrected matching, one-row-per-candidate deduplication, and exclusion of singleton 2004 baseline groups, the analysis sample is N = 7,639 candidates.
 
 **Dataset characteristics:**
-- 522 female candidates (6.7%), 7,290 male candidates (93.3%)
+- 506 female candidates (6.6%), 7,133 male candidates (93.4%)
 - Measured-contribution residual computed as: actual vote share − expected party vote share
 - Vote shares computed on the full constituency-year election table before MyNeta matching
 - Controls: criminal cases (binary), log assets, education (ordinal), year fixed effects
 
-**First-stage model fit:** The expected vote share is a non-parametric baseline — the party-state mean for 2004 and the party-constituency mean from 2004 for 2009, with state-level fallback. This model explains 80.5% of total vote-share variance (R² = 0.902 for 2004, 0.697 for 2009). The 2009 R² splits into 0.796 for observations with a direct party-constituency baseline and 0.451 for those using the state-level fallback. Regressing actual vote share on expected vote share yields a slope of 0.885 (SE: 0.006, R² = 0.822), indicating mild shrinkage toward the mean but reasonable calibration. The residual has mean −0.95 pp and standard deviation 6.84 pp, meaning the gender gap (−0.54 pp) is about 0.08σ.
+**First-stage model fit:** The expected vote share is a non-parametric baseline — the leave-one-out party-state mean for 2004 and the party-constituency mean from 2004 for 2009, with state-level fallback. This model explains 79.1% of total vote-share variance (R² = 0.879 for 2004, 0.697 for 2009). The 2009 R² splits into 0.796 for observations with a direct party-constituency baseline and 0.451 for those using the state-level fallback. Regressing actual vote share on expected vote share yields a slope of 0.877 (SE: 0.006, R² = 0.811). The residual has mean −0.97 pp and standard deviation 7.08 pp, meaning the gender gap (−0.60 pp) is about 0.08σ.
 
 **Regression results:**
 
 | Model | Female Coef | SE | p-value | 95% CI | Controls |
 |---|---:|---:|---:|---:|---|
-| Bivariate | −0.53 pp | 0.38 | 0.17 | [−1.28, +0.22] | None |
-| + Year FE | −0.55 pp | 0.38 | 0.15 | [−1.30, +0.20] | Year |
-| + Criminal + Assets | −0.52 pp | 0.38 | 0.17 | [−1.27, +0.22] | Criminal, Log Assets |
-| Full controls | −0.54 pp | 0.38 | 0.15 | [−1.29, +0.20] | Criminal, Log Assets, Education, Year |
+| Bivariate | −0.61 pp | 0.41 | 0.13 | [−1.40, +0.19] | None |
+| + Year FE | −0.62 pp | 0.40 | 0.12 | [−1.41, +0.17] | Year |
+| + Criminal + Assets | −0.61 pp | 0.41 | 0.13 | [−1.40, +0.19] | Criminal, Log Assets |
+| Full controls | −0.60 pp | 0.40 | 0.14 | [−1.39, +0.19] | Criminal, Log Assets, Education, Education missing, Year |
 | Full, excluding single-candidate party-state groups | −0.51 pp | 0.39 | 0.19 | [−1.27, +0.26] | Full |
 
 The gender coefficient is **not statistically significant** in any specification. The 95% confidence interval includes zero in all specifications. This means we cannot reject the null hypothesis that men and women have the same measured-contribution residual in the observed nominated sample. The coefficient is stable across specifications (roughly −0.51 to −0.55 pp), but this is descriptive rather than causal because nomination is endogenous.
 
 **Three-stage decomposition:**
 
-1. **Nomination deficit (Stage 1):** Women are 6.7% of matched candidates versus the contemporary 48.6% female-elector benchmark. This remains the dominant barrier, while the cross-time comparison is approximate.
+1. **Candidacy representation gap (Stage 1):** Women are 6.7% of matched candidates versus the contemporary 48.6% female-elector benchmark. This is the largest observed shortfall, while the cross-time comparison is approximate and does not identify ticket probabilities among unobserved aspirants.
 
 2. **Winnable seat deficit (Stage 2):** Among ticketed candidates, women have a *higher* share of winnable tickets (21.1% vs. 15.0%). This is consistent with survivorship bias, over-screening, or seat-quality compensation; it is not evidence that parties provide women equal nomination access.
 
@@ -555,7 +555,7 @@ These findings reinforce the paper's central message: the nomination stage is th
 
 ## 6. Policy Discussion
 
-### 6.1 The Primary Diagnosis: Party Gatekeeping
+### 6.1 The Primary Diagnosis: Evidence Consistent with Party Gatekeeping
 
 The evidence suggests that Stage 1 (nomination) is the dominant barrier. Stage 2 (seat quality) does not appear to be a deficit in the selected 2004–2009 matched sample — women who receive tickets have a higher winnable-seat rate than men (21.1% vs. 15.0%), consistent with selection on quality or seat-quality compensation. Stage 3 (vote conversion) is small and statistically uncertain (−0.11 pp among winnable candidates). The correction should therefore primarily target party nomination rules, while further data should test whether this pattern holds in contemporary elections.
 
@@ -609,7 +609,7 @@ This paper makes three contributions:
 
 1. **An operational proxy for measured electoral contribution** in Indian elections — the party-normalized vote share residual — that adjusts for modeled party, constituency, and election context without claiming to isolate latent capability.
 
-2. **A three-stage decomposition** of women's representation deficit into nomination deficit, winnable-seat deficit, and vote-conversion deficit — enabling precise policy targeting. Preliminary empirical results (2004–2009) are consistent with the nomination deficit as dominant (≈40 pp gap between candidate share and electorate share), with women receiving higher observed winnable-seat rates in the selected nominated sample.
+2. **A three-stage decomposition** of women's representation shortfall into a candidacy representation gap, winnable-seat gap, and vote-conversion gap — enabling more precise policy targeting. Preliminary empirical results (2004–2009) show the candidacy gap as the largest observed disparity (≈40 pp between candidate share and electorate share), with women receiving higher observed winnable-seat rates in the selected nominated sample.
 
 3. **A formal five-condition test** for when institutional correction can be relaxed — requiring representation parity, ticket parity, win-probability parity, temporal stability, and distributional breadth across at least three election cycles.
 
@@ -624,6 +624,8 @@ Demonstrating empirical portability across additional groups (SC/ST, OBC, minori
 ## Reproducibility
 
 This repository now includes a deterministic analysis pipeline and measurement-validation suite. Core scripts read from `data/raw/`; TCPD extension scripts read from `data/TCPD_*`; all write results to `experiments/results/`. The current implementation records random seed 42 for stochastic cross-validation, permutation checks, and bootstrap draws.
+
+**Code and data availability.** The public replication repository is available at [https://github.com/Ayush12358/electoral-reservation](https://github.com/Ayush12358/electoral-reservation). It contains the analysis code, tracked inputs, provenance checksums, generated result artifacts, and reproduction instructions associated with this arXiv paper.
 
 Implemented reproducibility elements:
 
@@ -650,13 +652,14 @@ Implemented reproducibility elements:
 - Deterministic release builder: `scripts/build_release.py`
 - Manifest of implemented and blocked plan items: `experiments/results/plan_implementation_manifest.json`
 - Fuzzy-review consumer and status gate: `experiments/apply_entity_resolution_adjudication.py`
-- DOI deposition metadata: `CITATION.cff`, `release/zenodo.json`
+- GitHub repository citation metadata: `CITATION.cff`
+- arXiv submission and repository-link checklist: `release/arxiv_submission.md`
 - Frozen-release checksum/member verifier: `experiments/verify_release.py`
 
 Remaining external reproducibility steps for journal submission:
 
 - Human decisions in the fuzzy entity-resolution review file
-- Public Zenodo deposition and DOI issuance
+- arXiv submission and insertion of the assigned arXiv identifier in the paper, README, and citation metadata
 
 The local review workflow and frozen archive are implemented; these two steps require
 human review or an external archival service.
@@ -910,6 +913,6 @@ Section 5.9 incorporates findings from experiments using the TCPD-AID dataset (`
 | 12 | Education premium lower in Reserved | Contradicted (HIGHER: 1.18 vs 0.54) |
 | 13 | Women face double disadvantage in SC/ST | Not supported (win rate 17.5% vs 13.4%) |
 | 15 | Independents perform worse in Reserved | Contradicted (BETTER: 1.70% vs 1.00%) |
-| 22 | Female nomination deficit at gatekeeping | Supported (92.89% male tickets) |
+| 22 | Candidacy representation shortfall consistent with gatekeeping | Supported descriptively (92.89% of observed candidates were men) |
 | 25 | Glass cliff: women given weak seats | Supported |
 | 45 | Long-term reserved seats more competitive | Supported (margin decline faster) |

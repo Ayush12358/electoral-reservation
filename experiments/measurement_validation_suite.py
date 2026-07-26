@@ -467,7 +467,7 @@ def write_manifest():
             "structured entity-resolution adjudication template with decision and evidence fields",
             "reproducible adjudication consumer with pending-review status and release gate",
             "reproducibility scaffolding and refreshed local frozen release snapshot",
-            "DOI-ready CITATION.cff and Zenodo deposition metadata",
+            "CITATION.cff and arXiv submission metadata naming the GitHub repository",
             "deterministic release builder with repeatable archive hash",
             "independently verifiable frozen-release checksum and required-member gate",
         ],
@@ -476,7 +476,7 @@ def write_manifest():
             "manual entity-resolution adjudication: review queue prepared and sensitivity bounded, final acceptance pending",
             "Bayesian uncertainty propagation: not implemented",
             "distributional-breadth exit condition: required within-group attribute and benchmark not pre-specified in local data",
-            "Zenodo archival / DOI: not performed",
+            "arXiv submission / identifier assignment: not yet performed",
         ],
     }
     with open(OUTPUT_DIR / "plan_implementation_manifest.json", "w", encoding="utf-8") as f:

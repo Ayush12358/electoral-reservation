@@ -1,27 +1,29 @@
 {
-  "created_at_utc": "2026-07-17T16:40:39Z",
+  "created_at_utc": "2026-07-26T06:37:14Z",
   "archive": "release/electoral_reservation_frozen_2026-07-17.tar.gz",
-  "archive_sha256": "d430645f87bdf37c2d319474cf6d509ffb8062d6cdba411209ffddd65d46b7ed",
-  "n_members": 101,
+  "archive_sha256": "e24348e76435fb8037576c10db69ef1c7274d651d7471d3a5c45151101951c99",
+  "n_members": 103,
   "verified_with": "python scripts/build_release.py and experiments/verify_release.py",
   "included_top_level_artifacts": [
     "PAPER.md",
     "PLAN.md",
     "README.md",
     "CITATION.cff",
+    "LICENSE",
     "requirements.txt",
     "Dockerfile",
     ".dockerignore",
     ".gitignore",
     "scripts/reproduce.sh",
     "scripts/build_release.py",
+    "scripts/validate_checksums.py",
     "data/provenance_checksums.json",
     "outputs/manuscript_consistency_audit.md",
     "outputs/measurement_model_concepts.svg",
     "outputs/external_claims_source_audit_2026-07-17.md",
-    "release/zenodo.json"
+    "release/arxiv_submission.md"
   ],
   "included_experiment_sources": "All Python files in experiments/ at freeze time, including validation, sensitivity, adjudication, audit, and release-verification scripts.",
   "included_results": "All CSV and JSON result artifacts in experiments/results/ at freeze time.",
-  "excluded_note": "Raw data directories are excluded; see data/provenance_checksums.json for hashes of local raw inputs. DOI archival remains outstanding."
+  "excluded_note": "Raw data directories are excluded; see data/provenance_checksums.json. The paper is intended for arXiv, with this GitHub repository as its public replication companion."
 }

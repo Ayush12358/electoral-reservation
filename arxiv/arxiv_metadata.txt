@@ -1,0 +1,12 @@
+Title: Electoral Capability, Party Gatekeeping, and the Exit Threshold for Institutional Correction
+Author: Ayush Maurya
+Primary category: stat.AP
+Version: Working Paper, Version 0.1 -- July 2026
+
+Abstract:
+We introduce a computational measurement framework and provide an initial empirical validation of its measurement properties. The framework should be interpreted as a proof-of-concept rather than a fully validated measurement instrument. The core contribution is a conceptual decomposition: representation deficits occur through sequential institutional filters -- nomination, seat quality, and vote conversion -- each of which is independently measurable. We operationalize measured electoral contribution as a party-normalized residual: an observable proxy for latent capability, not capability itself. We evaluate the framework using Indian parliamentary elections (2004-2009), a TCPD extension through 2019, and a five-state Vidhan Sabha replication. The strongest substantive finding is the diagnostic decomposition: the largest observed disparity is the candidacy representation gap (women are 6.6% of matched candidates versus the contemporary 48.6% female-elector benchmark), while the vote-conversion gap is small and statistically uncertain. Within the observed nominated sample, measured electoral contribution differs little by gender after conditioning on observed covariates (-0.60 pp, SE: 0.40, p = 0.14, 95% CI: [-1.39, +0.19]); this estimate does not generalize to potential candidates because nomination is endogenous. Validation is mixed: the residual predicts 2009 renomination (OR = 1.05 per percentage point, cross-validated AUC = 0.66), but adds little to current vote share for predicting later vote share or winning among selected TCPD recontesters. The exit diagnostic is evaluated over 100 threshold and persistence choices; no combination yields a pass on the three observable conditions, while distributional breadth remains unmeasured. The five-state replication demonstrates institutional-setting portability with heterogeneous results; portability to other groups remains an open question.
+
+Suggested comments:
+Working paper. 27 pages, 1 figure, and 20 tables. Code, data documentation, and reproducibility materials are available at https://github.com/Ayush12358/electoral-reservation.
+
+License selection: Choose deliberately in the arXiv submission form; no selection is encoded in this package.

@@ -20,17 +20,19 @@ TOP_LEVEL = [
     "PLAN.md",
     "README.md",
     "CITATION.cff",
+    "LICENSE",
     "requirements.txt",
     "Dockerfile",
     ".dockerignore",
     ".gitignore",
     "scripts/reproduce.sh",
     "scripts/build_release.py",
+    "scripts/validate_checksums.py",
     "data/provenance_checksums.json",
     "outputs/manuscript_consistency_audit.md",
     "outputs/measurement_model_concepts.svg",
     "outputs/external_claims_source_audit_2026-07-17.md",
-    "release/zenodo.json",
+    "release/arxiv_submission.md",
 ]
 
 
@@ -81,7 +83,7 @@ def main() -> None:
         "included_top_level_artifacts": TOP_LEVEL,
         "included_experiment_sources": "All Python files in experiments/ at freeze time, including validation, sensitivity, adjudication, audit, and release-verification scripts.",
         "included_results": "All CSV and JSON result artifacts in experiments/results/ at freeze time.",
-        "excluded_note": "Raw data directories are excluded; see data/provenance_checksums.json for hashes of local raw inputs. DOI archival remains outstanding.",
+        "excluded_note": "Raw data directories are excluded; see data/provenance_checksums.json. The paper is intended for arXiv, with this GitHub repository as its public replication companion.",
     }
     MANIFEST.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     print(f"Built {ARCHIVE.name}: {members} members, SHA-256 {manifest['archive_sha256']}")
